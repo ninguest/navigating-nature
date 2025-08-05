@@ -1125,3 +1125,117 @@ small {
     height: 200px;
   }
 }
+
+/* Text Carousel Styles - FIXED VERSION */
+.text-carousel {
+  margin-top: 2rem;
+  background: var(--clr-glass);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--clr-glass-border);
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.1);
+}
+
+.text-carousel .carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(44, 62, 80, 0.1);
+  min-height: 250px;
+}
+
+.text-carousel .carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  height: 100%;
+}
+
+.text-carousel .carousel-slide {
+  min-width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 250px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.diary-entry {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.diary-date {
+  color: var(--clr-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.diary-entry h4 {
+  color: var(--clr-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.diary-entry p {
+  color: var(--clr-text);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  font-style: italic;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Dark theme adjustments for text carousel */
+[data-theme="dark"] .text-carousel .carousel-container {
+  background: rgba(44, 62, 80, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .diary-entry p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Mobile responsiveness for text carousel */
+@media (max-width: 768px) {
+  .text-carousel .carousel-slide {
+    padding: 1.5rem 1rem;
+    min-height: 200px;
+  }
+  
+  .diary-entry h4 {
+    font-size: 1.2rem;
+  }
+  
+  .diary-entry p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-carousel .carousel-slide {
+    padding: 1rem;
+    min-height: 180px;
+  }
+  
+  .diary-entry h4 {
+    font-size: 1.1rem;
+  }
+  
+  .diary-entry p {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}
